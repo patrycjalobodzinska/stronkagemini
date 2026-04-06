@@ -1,3 +1,4 @@
+import { PageSeo } from '@/components/PageSeo';
 import { NextPageWithLayout } from '@/layouts/NextPageWithLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 import door from '@/public/door.png';
@@ -14,6 +15,11 @@ import dreLogo from '@/public/dre.jpg';
 const Home: NextPageWithLayout = () => {
   return (
     <>
+      <PageSeo
+        title="Drzwi zewnętrzne i wewnętrzne"
+        description="Sprzedaż i montaż drzwi Gerda, DRE, Erkado w Rzeszowie. Drzwi wejściowe do mieszkań i domów jednorodzinnych. Katalogi, fachowy montaż."
+        path="/doors"
+      />
       <section className=" h-full -mt-2 mx-2 lg:mx-auto max-w-[1600px]">
         {' '}
         <main className="flex flex-col items-center  justify-between w-">
@@ -71,9 +77,9 @@ const Home: NextPageWithLayout = () => {
             <div className="mt-4 grid md:grid-cols-2 gap-4 lg:mx-12">
               {' '}
               <div>
-                <div className=" flex items-center justify-center flex-col gap-4 text-3xl mt-12 text-gray-700 font-semibold">
+                <div className="mt-12 flex flex-col items-center justify-center gap-3 text-3xl font-semibold text-slate-800">
                   Drzwi zewnętrzne
-                  <div className="border-2 rounded-full w-12 border-primary"></div>
+                  <div className="h-1 w-14 rounded-full bg-gradient-to-r from-primary to-amber-300" />
                 </div>
                 {/* <div className="mt-16 text-4xl font-semibold ">
                 NADZWYCZAJNE TECHNOLOGIE
@@ -98,9 +104,9 @@ const Home: NextPageWithLayout = () => {
               </div>
               <div>
                 {' '}
-                <div className=" flex items-center justify-center flex-col gap-4 text-3xl mt-12 text-gray-700 font-semibold">
+                <div className="mt-12 flex flex-col items-center justify-center gap-3 text-3xl font-semibold text-slate-800">
                   Drzwi wewnętrzne
-                  <div className="border-2 rounded-full w-12 border-primary"></div>
+                  <div className="h-1 w-14 rounded-full bg-gradient-to-r from-primary to-amber-300" />
                 </div>
                 <div className="my-12  gap-y-16 gap-4 grid sm:grid-cols-2">
                   <Card

@@ -12,7 +12,7 @@ const PublicLayout: React.FC<IPrimaryLayout> = ({ children }) => {
     <>
       {' '}
       <Header />
-      <main className={`min-h-[calc(100vh-382px)] h-full w-full`}>
+      <main className="min-h-[calc(100vh-382px)] h-full w-full">
         {children}
       </main>
       <div className="flex items-end mt-12 justify-end ">

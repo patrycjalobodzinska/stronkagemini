@@ -8,9 +8,11 @@ const Realization = () => {
     <>
       <div className="flex flex-col">
         <div className="lg:px-36 px-2 sm:px-12 md:px-24 flex flex-col gap-2">
-          <div className="mt-16 flex items-center justify-center flex-col gap-4 text-4xl text-gray-700 font-semibold">
-            Realizacja usług
-            <div className="border-2 rounded-full w-12 border-primary"></div>
+          <div className="mt-16 flex flex-col items-center justify-center gap-3">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
+              Realizacja usług
+            </h2>
+            <div className="h-1 w-14 rounded-full bg-gradient-to-r from-primary to-amber-300" />
           </div>
           <div className="md:mb-24 mt-12 flex ">
             <div className="flex flex-col ">

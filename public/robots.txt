@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Opcjonalnie po wdrożeniu mapy witryny:
+# Sitemap: https://www.geminirzeszow.pl/sitemap.xml

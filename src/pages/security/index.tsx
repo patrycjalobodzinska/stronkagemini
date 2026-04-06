@@ -1,3 +1,4 @@
+import { PageSeo } from '@/components/PageSeo';
 import { NextPageWithLayout } from '@/layouts/NextPageWithLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 
@@ -47,6 +48,11 @@ const Home: NextPageWithLayout = () => {
   ));
   return (
     <>
+      <PageSeo
+        title="Alarmy i systemy alarmowe"
+        description="Alarmy dla domu, mieszkania, biura i sklepu – czujki, centrale, gotowe zestawy. Montaż i konfiguracja GEMINI Rzeszów."
+        path="/security"
+      />
       <section className="max-w-screen h-full  -mt-2 mx-2 lg:mx-auto">
         {' '}
         <main className="flex flex-col items-center  justify-between ">

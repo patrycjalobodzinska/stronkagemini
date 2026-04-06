@@ -1,3 +1,4 @@
+import { PageSeo } from '@/components/PageSeo';
 import { NextPageWithLayout } from '@/layouts/NextPageWithLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 
@@ -10,6 +11,11 @@ import garageDoors from '@/public/wisniowskiGarageDoors.png';
 const Home: NextPageWithLayout = () => {
   return (
     <>
+      <PageSeo
+        title="Bramy garażowe i wjazdowe"
+        description="Bramy segmentowe Wiśniowski – sprzedaż, montaż i serwis w Rzeszowie. Bramy garażowe dopasowane do architektury budynku."
+        path="/garage-doors"
+      />
       <section className="max-w-screen h-full  -mt-2 mx-2 lg:mx-auto">
         {' '}
         <main className="flex flex-col items-center  justify-between ">

@@ -14,7 +14,7 @@
   }
 
   body {
-    @apply overflow-x-hidden antialiased bg-white w-screen h-full;
+    @apply overflow-x-hidden antialiased bg-brand-50 text-slate-800 w-screen h-full font-sans;
   }
 
   body #root {
@@ -56,8 +56,8 @@
 
 :root {
   --primary-color: #fcdf2a;
-  --main-header-color: white;
-  --secondary-header-color: #777;
+  --main-header-color: rgba(255, 255, 255, 0.92);
+  --secondary-header-color: #64748b;
 }
 
 html {
@@ -76,8 +76,10 @@ select:focus {
 /* React Leaflet */
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  background-color: red;
+  background-color: #002c59;
   color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(15, 39, 64, 0.2);
 }
 
 /* Sidebar */

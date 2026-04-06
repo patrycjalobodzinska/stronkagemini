@@ -1,3 +1,4 @@
+import { PageSeo } from '@/components/PageSeo';
 import { NextPageWithLayout } from '@/layouts/NextPageWithLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 import Image from 'next/image';
@@ -8,6 +9,11 @@ import { useState } from 'react';
 const Home: NextPageWithLayout = () => {
   return (
     <>
+      <PageSeo
+        title="O nas"
+        description="Firma GEMINI z Rzeszowa – ponad 20 lat w monitoringu, kamerach, drzwiach i bramach. Profesjonalna obsługa, wyceny z dojazdem."
+        path="/about"
+      />
       <section className="max-w-screen h-full  -mt-2 mx-2 lg:mx-auto">
         {' '}
         <main className="flex flex-col items-center  justify-between ">

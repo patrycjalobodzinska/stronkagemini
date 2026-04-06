@@ -13,7 +13,6 @@ const Section = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
-  console.log();
 
   const isInCenter = (number: number, ref: any) => {
     return (
@@ -34,7 +33,6 @@ const Section = () => {
   const isInViewport2 = isInCenter(1, ref1);
   const isInViewport3 = isInCenter(2, ref1);
   const isInViewport4 = isInCenter(3, ref1);
-  console.log(isInViewport1, isInViewport2, isInViewport3, isInViewport4);
   useEffect(() => {
     const interval = setInterval(() => {
       setHighlightedIndex((prevIndex) => (prevIndex + 1) % 4);
@@ -42,17 +40,23 @@ const Section = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const cardBase =
+    'cursor-default flex h-52 flex-col items-center justify-center rounded-2xl border transition duration-500 ease-in-out';
+  const cardInactive =
+    'border-slate-200/80 bg-white text-slate-700 shadow-soft hover:border-slate-300';
+  const cardActive =
+    'scale-[1.03] border-transparent bg-brand-navy text-white shadow-lift';
+
   return (
-    <div className="w-full px-12 md:px-0 mt-12 gap-y-4 bg-transparent rounded-lg lg:bg-[#d9dee3] grid lg:grid-cols-2   lg:shadow-md">
-      <div className=" grid md:grid-cols-2 gap-y-4 md:bg-[#d9dee3]  rounded-lg ">
-        {' '}
+    <div className="mt-12 grid w-full gap-4 rounded-3xl bg-gradient-to-b from-brand-100/80 to-brand-50/50 px-4 py-6 md:px-2 lg:grid-cols-2 lg:bg-brand-100/60 lg:shadow-soft">
+      <div className="grid gap-4 md:grid-cols-2">
         <div
           ref={ref1}
-          className={`cursor-default transition duration-500 ease-in-out ${
+          className={`${cardBase} ${
             (size && highlightedIndex === 0) || (isInViewport1 && !size)
-              ? 'bg-[#002c59] scale-110   rounded-lg '
-              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
-          }   rounded-lg    flex lg:my-0    text-white flex-col h-52 items-center  justify-center`}
+              ? cardActive
+              : `${cardInactive} lg:bg-white/80`
+          }`}
         >
           <div
             className={`${
@@ -60,8 +64,13 @@ const Section = () => {
             } flex  flex-col items-center  justify-center `}
           >
             <SiElectron
+              className={
+                (size && highlightedIndex === 0) || (isInViewport1 && !size)
+                  ? 'text-primary'
+                  : 'text-brand-navy'
+              }
               style={{
-                stroke: 'white',
+                stroke: 'currentColor',
                 strokeWidth: '0.5',
               }}
               size={40}
@@ -75,11 +84,11 @@ const Section = () => {
         </div>
         <div
           ref={ref2}
-          className={`cursor-default transition duration-500 ease-in-out ${
+          className={`${cardBase} ${
             (size && highlightedIndex === 1) || (isInViewport2 && !size)
-              ? 'bg-[#002c59] scale-110  rounded-lg '
-              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
-          }   rounded-lg    flex lg:my-0    text-white flex-col items-center h-52 justify-center`}
+              ? cardActive
+              : `${cardInactive} lg:bg-white/80`
+          }`}
         >
           {' '}
           <div
@@ -88,7 +97,15 @@ const Section = () => {
             } flex  flex-col items-center  justify-center `}
           >
             {' '}
-            <LiaAwardSolid style={{ margin: '-5px' }} size={45} />
+            <LiaAwardSolid
+              className={
+                (size && highlightedIndex === 1) || (isInViewport2 && !size)
+                  ? 'text-primary'
+                  : 'text-brand-navy'
+              }
+              style={{ margin: '-5px' }}
+              size={45}
+            />
             <div className={`text-lg font-semibold mt-2`}>
               Wysoka jakość
             </div>{' '}
@@ -100,14 +117,14 @@ const Section = () => {
           </div>{' '}
         </div>
       </div>
-      <div className=" grid md:grid-cols-2 gap-y-4 md:bg-[#d9dee3]  rounded-lg ">
+      <div className="grid gap-4 md:grid-cols-2">
         <div
           ref={ref3}
-          className={`cursor-default transition duration-500 ease-in-out ${
+          className={`${cardBase} ${
             (size && highlightedIndex === 2) || (isInViewport3 && !size)
-              ? 'bg-[#002c59] scale-110   rounded-lg '
-              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
-          }   rounded-lg    flex lg:my-0    text-white flex-col items-center h-52 justify-center`}
+              ? cardActive
+              : `${cardInactive} lg:bg-white/80`
+          }`}
         >
           {' '}
           <div
@@ -115,7 +132,14 @@ const Section = () => {
               highlightedIndex === 2 && ' '
             } flex  flex-col items-center  justify-center `}
           >
-            <BsShieldCheck size={40} />
+            <BsShieldCheck
+              className={
+                (size && highlightedIndex === 2) || (isInViewport3 && !size)
+                  ? 'text-primary'
+                  : 'text-brand-navy'
+              }
+              size={40}
+            />
             <div className="text-lg font-semibold mt-2">
               Najlepsze produkty
             </div>{' '}
@@ -127,18 +151,25 @@ const Section = () => {
         </div>{' '}
         <div
           ref={ref4}
-          className={`cursor-default transition duration-500 ease-in-out ${
+          className={`${cardBase} ${
             (size && highlightedIndex === 3) || (isInViewport4 && !size)
-              ? 'bg-[#002c59] scale-110   rounded-lg '
-              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
-          }   rounded-lg    flex lg:my-0    text-white flex-col items-center h-52 justify-center`}
+              ? cardActive
+              : `${cardInactive} lg:bg-white/80`
+          }`}
         >
           <div
             className={`${
               highlightedIndex === 3 && ' '
             } flex  flex-col items-center  justify-center `}
           >
-            <RxGear size={40} />
+            <RxGear
+              className={
+                (size && highlightedIndex === 3) || (isInViewport4 && !size)
+                  ? 'text-primary'
+                  : 'text-brand-navy'
+              }
+              size={40}
+            />
             <div className="text-lg font-semibold mt-2">Topowe usługi</div>
             <div className=" text-center  px-4 mt-2">
               Nasze usłgugi realizowane są przez zespoł doświadczonych fachowców{' '}

@@ -8,8 +8,8 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <div className="mt-auto w-full bg-[#2f495e] ">
-      <footer className="max-w-screen-2xl pb-4  mx-auto  h-full  mt-3 flex flex-col gap-4 px-4 md:px-6 md:gap-0 ">
+    <div className="mt-auto w-full bg-gradient-to-br from-brand-800 via-[#2a4a63] to-brand-900">
+      <footer className="mx-auto mt-3 flex h-full max-w-screen-2xl flex-col gap-4 px-4 pb-8 pt-2 md:gap-0 md:px-6">
         <div className="relative h-12 w-32 mb-4 -ml-2">
           <Image
             src={logo}
@@ -17,12 +17,12 @@ const Footer = () => {
             className=" h-full  object-contain object-center w-full "
           />
         </div>
-        <div className="flex gap-y-2 flex-wrap items-center justify-center md:justify-start text-white text-sm mb-8 ">
+        <div className="mb-8 flex flex-wrap items-center justify-center gap-y-2 text-sm text-white/90 md:justify-start">
           <div
             onClick={() => {
               router.push(`/cameras`);
             }}
-            className="border-r pr-2 mr-2 cursor-pointer transition-all hover:underline"
+            className="mr-2 cursor-pointer border-r border-white/20 pr-3 transition hover:text-primary"
           >
             Kamery
           </div>
@@ -30,7 +30,7 @@ const Footer = () => {
             onClick={() => {
               router.push(`/doors`);
             }}
-            className="border-r pr-2 mr-2 cursor-pointer transition-all hover:underline"
+            className="mr-2 cursor-pointer border-r border-white/20 pr-3 transition hover:text-primary"
           >
             Drzwi
           </div>
@@ -38,7 +38,7 @@ const Footer = () => {
             onClick={() => {
               router.push(`/garage-doors`);
             }}
-            className="border-r pr-2 mr-2 cursor-pointer transition-all hover:underline"
+            className="mr-2 cursor-pointer border-r border-white/20 pr-3 transition hover:text-primary"
           >
             Bramy
           </div>
@@ -46,7 +46,7 @@ const Footer = () => {
             onClick={() => {
               router.push(`/rollers`);
             }}
-            className="border-r pr-2 mr-2 cursor-pointer transition-all hover:underline"
+            className="mr-2 cursor-pointer border-r border-white/20 pr-3 transition hover:text-primary"
           >
             Rolety
           </div>
@@ -54,7 +54,7 @@ const Footer = () => {
             onClick={() => {
               router.push(`/security`);
             }}
-            className="border-r pr-2 mr-2 cursor-pointer transition-all hover:underline"
+            className="mr-2 cursor-pointer border-r border-white/20 pr-3 transition hover:text-primary"
           >
             Alarmy
           </div>
@@ -89,26 +89,26 @@ const Footer = () => {
             <div className="flex flex-col md:pl-4 gap-5">
               {' '}
               <div className="flex items-center">
-                <div className="text-xl border-2 border-primary p-1.5 text-primary  rounded-full">
+                <div className="rounded-full border-2 border-primary/90 bg-primary/10 p-2 text-xl text-primary">
                   <HiPhone />
                 </div>
                 <div className="pl-4 ">
                   <a
                     href="tel:+48513001600"
-                    className="underline font-medium text-lg"
+                    className="text-lg font-medium text-white transition hover:text-primary"
                   >
-                    +48513001600
+                    +48 513 001 600
                   </a>{' '}
                 </div>
               </div>{' '}
               <div className="flex items-center">
-                <div className="text-xl border-2 border-primary p-1.5 text-primary  rounded-full">
+                <div className="rounded-full border-2 border-primary/90 bg-primary/10 p-2 text-xl text-primary">
                   <AiFillMail />
                 </div>
                 <div className="pl-4">
                   <a
-                    href="mailto:+48513001600"
-                    className="underline font-medium text-lg"
+                    href="mailto:janusz@geminirzeszow.pl"
+                    className="text-lg font-medium text-white transition hover:text-primary"
                   >
                     janusz@geminirzeszow.pl
                   </a>

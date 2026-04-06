@@ -10,11 +10,10 @@ import Link from 'next/link';
 const Header = () => {
   const [openedBurger, setOpenedBurger] = useState<boolean>(false);
   const router = useRouter();
-  console.log(router.pathname?.length);
   return (
     <>
       <header
-        className={`z-[1001] sticky top-0 bg-gray-50 shadow-md flex  justify-center items-center h-full transition-all duration-300  `}
+        className="z-[1001] sticky top-0 flex h-full items-center justify-center border-b border-slate-200/80 bg-white/85 shadow-soft backdrop-blur-md transition-all duration-300 supports-[backdrop-filter]:bg-white/70"
       >
         <a href={`/`} className=" h-full ">
           <div className="relative h-10 w-28 mt-1 cursor-pointer  ">
@@ -26,30 +25,32 @@ const Header = () => {
           </div>
         </a>
         <div className="w-full">
-          <div className=" text-sm w-full flex items-center mt-1 sm:px-8 px-2 justify-end">
-            <div className="border-r  flex items-center justify-center pr-2 mr-2">
-              Zadzwoń:
-              <a href="tel:+48513001600">+48513001600</a>{' '}
+          <div className="mt-1 flex w-full items-center justify-end px-2 text-sm text-slate-600 sm:px-8">
+            <div className="mr-2 flex items-center justify-center border-r border-slate-200 pr-3">
+              <span className="hidden sm:inline">Zadzwoń: </span>
+              <a
+                href="tel:+48513001600"
+                className="font-semibold text-brand-navy transition hover:text-primary"
+              >
+                +48 513 001 600
+              </a>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3 text-slate-500">
               <a
                 rel="noreferrer"
                 target="_blank"
+                className="rounded-lg p-1.5 transition hover:bg-slate-100 hover:text-brand-navy"
                 href={'https://www.facebook.com/gemini.monitoringkamer'}
               >
-                <div>
-                  <FaFacebook />
-                </div>
+                <FaFacebook className="text-lg" />
               </a>
               <a
                 rel="noreferrer"
                 target="_blank"
+                className="rounded-lg p-1.5 transition hover:bg-slate-100 hover:text-brand-navy"
                 href={'https://www.instagram.com/p/Bfv7JfjBL9F/?img_index=1'}
               >
-                {' '}
-                <div>
-                  <BsInstagram />
-                </div>
+                <BsInstagram className="text-lg" />
               </a>
             </div>
           </div>
@@ -63,22 +64,31 @@ const Header = () => {
                   color="#fcdf2a"
                 />
               </div>
-              <div className="hidden sm:flex text-[#002c59] font-medium text-base    items-center justify-center   w-full">
-                <div className="flex items-center  justify-end w-full gap-7 py-1 px-4">
-                  <button onClick={() => router.push(`/about`)}>O nas</button>
+              <div className="hidden w-full items-center justify-center text-base font-medium text-brand-navy sm:flex">
+                <div className="flex w-full items-center justify-end gap-1 py-1.5 px-4">
+                  <button
+                    type="button"
+                    onClick={() => router.push(`/about`)}
+                    className="rounded-xl px-4 py-2 transition hover:bg-slate-100"
+                  >
+                    O nas
+                  </button>
                   <Menu
-                    shadow="md"
+                    shadow="lg"
+                    radius="md"
                     trigger="hover"
                     withArrow
-                    offset={4.5}
+                    offset={8}
                     arrowPosition="center"
                     position="bottom-start"
                     width={500}
                   >
                     <Menu.Target>
-                      <div className="cursor-pointer">Oferta</div>
+                      <div className="cursor-pointer rounded-xl px-4 py-2 transition hover:bg-slate-100">
+                        Oferta
+                      </div>
                     </Menu.Target>
-                    <Menu.Dropdown>
+                    <Menu.Dropdown className="border border-slate-100 shadow-lift">
                       <div className="grid grid-cols-2">
                         <Menu.Item onClick={() => router.push(`/doors`)}>
                           <div className=" text-lg flex leading-4 flex-col">
@@ -160,12 +170,21 @@ const Header = () => {
                   </Menu>
                   {router.pathname?.length < 2 ? (
                     <Link href="#contact">
-                      <button className="">Kontakt</button>
+                      <button
+                        type="button"
+                        className="rounded-xl bg-primary px-5 py-2 font-semibold text-brand-navy shadow-sm transition hover:brightness-105"
+                      >
+                        Kontakt
+                      </button>
                     </Link>
                   ) : (
-                    <div onClick={() => router.push(`/#contact`)}>
-                      <button className="">Kontakt</button>
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => router.push(`/#contact`)}
+                      className="rounded-xl bg-primary px-5 py-2 font-semibold text-brand-navy shadow-sm transition hover:brightness-105"
+                    >
+                      Kontakt
+                    </button>
                   )}
                 </div>
               </div>

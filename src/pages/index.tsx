@@ -1,3 +1,5 @@
+import { JsonLdLocalBusiness } from '@/components/JsonLdLocalBusiness';
+import { PageSeo } from '@/components/PageSeo';
 import { NextPageWithLayout } from '@/layouts/NextPageWithLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 import Alarmy from '@/modules/Alarmy';
@@ -15,6 +17,12 @@ import { dehydrate, QueryClient, useQuery } from 'react-query';
 const Home: NextPageWithLayout = () => {
   return (
     <>
+      <PageSeo
+        title="Monitoring i zabezpieczenia domu – Rzeszów"
+        description="Monitoring, kamery CCTV, drzwi Gerda i DRE, bramy Wiśniowski, alarmy, rolety – Rzeszów i okolice. Wycena z dojazdem. Ponad 20 lat na rynku."
+        path="/"
+      />
+      <JsonLdLocalBusiness />
       <section className=" h-full -mt-2 mx-2 lg:mx-auto max-w-[1600px]">
         {' '}
         <main className="flex flex-col items-center  justify-between w-">
@@ -23,7 +31,7 @@ const Home: NextPageWithLayout = () => {
           <img
             src={'back.jpg'}
             alt=""
-            className="fixed top-0 left-0 w-full h-full z-[-1] h-full w-full object-cover pt-16  opacity-20"
+            className="fixed left-0 top-0 z-[-1] h-full w-full object-cover pt-16 opacity-[0.12]"
           />
           <div className=" flex-col gap-24 h-full  w-full -mt-14 flex items-center justify-center md:px-8 lg:px-12 ">
             <Section /> <PartnershipCarousel />

@@ -1,0 +1,10 @@
+{
+  "name": "GEMINI – monitoring, kamery, drzwi, bramy, alarmy",
+  "short_name": "GEMINI",
+  "description": "Monitoring, kamery CCTV, drzwi, bramy, alarmy, rolety – Rzeszów.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4f7fb",
+  "theme_color": "#002c59",
+  "lang": "pl"
+}

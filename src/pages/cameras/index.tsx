@@ -1,3 +1,4 @@
+import { PageSeo } from '@/components/PageSeo';
 import { NextPageWithLayout } from '@/layouts/NextPageWithLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 import cam1 from '@/public/cam1.png';
@@ -12,6 +13,11 @@ import online from '@/public/online1.jpg';
 const Home: NextPageWithLayout = () => {
   return (
     <>
+      <PageSeo
+        title="Monitoring i kamery CCTV"
+        description="Kamery analogowe, IP i Wi-Fi, Hikvision – projektowanie, montaż i konfiguracja monitoringu w Rzeszowie i okolicach."
+        path="/cameras"
+      />
       <section className="h-full w-full -mt-2 ">
         {' '}
         <main className="flex flex-col items-center  justify-between ">

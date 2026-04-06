@@ -33,9 +33,11 @@ export const PartnershipCarousel = () => {
 
   return (
     <section className="relative w-full h-[200px] lg:h-[100px] sm:mx-auto md:my-16 ">
-      <div className="md:mb-16 mb-6 flex items-center justify-center flex-col gap-4 sm:text-4xl text-2xl text-gray-700 font-semibold">
-        Nasi partnerzy{' '}
-        <div className="border-2 rounded-full w-12 border-primary"></div>
+      <div className="mb-6 flex flex-col items-center justify-center gap-3 md:mb-16">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
+          Nasi partnerzy
+        </h2>
+        <div className="h-1 w-14 rounded-full bg-gradient-to-r from-primary to-amber-300" />
       </div>
       <div className="h-[100px] lg:h-[100px] mt-8 lg:mt-0">
         <div className="relative p-0 max-w-[100vw]">

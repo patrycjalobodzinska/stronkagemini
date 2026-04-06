@@ -1,3 +1,4 @@
+import { PageSeo } from '@/components/PageSeo';
 import { NextPageWithLayout } from '@/layouts/NextPageWithLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 
@@ -34,6 +35,11 @@ const Home: NextPageWithLayout = () => {
   ));
   return (
     <>
+      <PageSeo
+        title="Rolety zewnętrzne i żaluzje"
+        description="Rolety zewnętrzne, żaluzje – oferta, montaż i doradztwo GEMINI Rzeszów. Wiśniowski i sprawdzone rozwiązania."
+        path="/rollers"
+      />
       <section className="max-w-screen h-full  -mt-2 mx-2 lg:mx-auto">
         {' '}
         <main className="flex flex-col items-center  justify-between ">
