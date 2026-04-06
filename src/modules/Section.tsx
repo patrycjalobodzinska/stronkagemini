@@ -1,0 +1,223 @@
+'use client';
+import { SiElectron } from 'react-icons/si';
+import { RxGear } from 'react-icons/rx';
+import { LiaAwardSolid } from 'react-icons/lia';
+import { BsShieldCheck } from 'react-icons/bs';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMediaQuery, useWindowEvent, useWindowScroll } from '@mantine/hooks';
+
+const Section = () => {
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(0);
+  const size = useMediaQuery('(min-width:600px)');
+  const [scroll] = useWindowScroll();
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  console.log();
+
+  const isInCenter = (number: number, ref: any) => {
+    return (
+      scroll.y >
+        ref?.current?.offsetTop / 2 -
+          (ref?.current?.offsetParent?.clientHeight - ref?.current?.offsetTop) +
+          number * 208 &&
+      scroll.y <
+        ref?.current?.offsetTop / 2 -
+          (ref?.current?.offsetParent?.clientHeight - ref?.current?.offsetTop) +
+          (number + 1) * 208
+    );
+  };
+  const ref4 = useRef(null);
+
+  const isInViewport1 = isInCenter(0, ref1);
+
+  const isInViewport2 = isInCenter(1, ref1);
+  const isInViewport3 = isInCenter(2, ref1);
+  const isInViewport4 = isInCenter(3, ref1);
+  console.log(isInViewport1, isInViewport2, isInViewport3, isInViewport4);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHighlightedIndex((prevIndex) => (prevIndex + 1) % 4);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="w-full px-12 md:px-0 mt-12 gap-y-4 bg-transparent rounded-lg lg:bg-[#d9dee3] grid lg:grid-cols-2   lg:shadow-md">
+      <div className=" grid md:grid-cols-2 gap-y-4 md:bg-[#d9dee3]  rounded-lg ">
+        {' '}
+        <div
+          ref={ref1}
+          className={`cursor-default transition duration-500 ease-in-out ${
+            (size && highlightedIndex === 0) || (isInViewport1 && !size)
+              ? 'bg-[#002c59] scale-110   rounded-lg '
+              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
+          }   rounded-lg    flex lg:my-0    text-white flex-col h-52 items-center  justify-center`}
+        >
+          <div
+            className={`${
+              highlightedIndex === 0 && ' '
+            } flex  flex-col items-center  justify-center `}
+          >
+            <SiElectron
+              style={{
+                stroke: 'white',
+                strokeWidth: '0.5',
+              }}
+              size={40}
+            />
+            <div className="text-lg font-semibold mt-2">Innowacje</div>
+            <div className=" text-center px-4 mt-2">
+              Dzięki najnowszym technologiom oferujemy skuteczne rozwiązania w
+              atrakcyjnej cenie.
+            </div>
+          </div>{' '}
+        </div>
+        <div
+          ref={ref2}
+          className={`cursor-default transition duration-500 ease-in-out ${
+            (size && highlightedIndex === 1) || (isInViewport2 && !size)
+              ? 'bg-[#002c59] scale-110  rounded-lg '
+              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
+          }   rounded-lg    flex lg:my-0    text-white flex-col items-center h-52 justify-center`}
+        >
+          {' '}
+          <div
+            className={`${
+              highlightedIndex === 1 && ' '
+            } flex  flex-col items-center  justify-center `}
+          >
+            {' '}
+            <LiaAwardSolid style={{ margin: '-5px' }} size={45} />
+            <div className={`text-lg font-semibold mt-2`}>
+              Wysoka jakość
+            </div>{' '}
+            <div className=" text-center  px-4 mt-2">
+              {/* Doskonała jakość - Nasza obietnica dla Ciebie. */}
+              Wieloletnie doświadczenie oraz stale powiększające się grono
+              zadowolonych klientów
+            </div>
+          </div>{' '}
+        </div>
+      </div>
+      <div className=" grid md:grid-cols-2 gap-y-4 md:bg-[#d9dee3]  rounded-lg ">
+        <div
+          ref={ref3}
+          className={`cursor-default transition duration-500 ease-in-out ${
+            (size && highlightedIndex === 2) || (isInViewport3 && !size)
+              ? 'bg-[#002c59] scale-110   rounded-lg '
+              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
+          }   rounded-lg    flex lg:my-0    text-white flex-col items-center h-52 justify-center`}
+        >
+          {' '}
+          <div
+            className={`${
+              highlightedIndex === 2 && ' '
+            } flex  flex-col items-center  justify-center `}
+          >
+            <BsShieldCheck size={40} />
+            <div className="text-lg font-semibold mt-2">
+              Najlepsze produkty
+            </div>{' '}
+            <div className=" text-center  px-4 mt-2">
+              Oferujemy wyłącznie sprawdzone przez nas produkty najwyższej
+              jakości.
+            </div>{' '}
+          </div>
+        </div>{' '}
+        <div
+          ref={ref4}
+          className={`cursor-default transition duration-500 ease-in-out ${
+            (size && highlightedIndex === 3) || (isInViewport4 && !size)
+              ? 'bg-[#002c59] scale-110   rounded-lg '
+              : 'lg:bg-transparent bg-[#d9dee3] md:bg-transparent '
+          }   rounded-lg    flex lg:my-0    text-white flex-col items-center h-52 justify-center`}
+        >
+          <div
+            className={`${
+              highlightedIndex === 3 && ' '
+            } flex  flex-col items-center  justify-center `}
+          >
+            <RxGear size={40} />
+            <div className="text-lg font-semibold mt-2">Topowe usługi</div>
+            <div className=" text-center  px-4 mt-2">
+              Nasze usłgugi realizowane są przez zespoł doświadczonych fachowców{' '}
+            </div>{' '}
+          </div>
+        </div>
+      </div>
+      {/* <div className="bg-white w-full h-full rounded-lg shadow-md ">
+        <div className="flex items-center justify-center">
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              clipPath:
+                "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+              background: "#194569",
+            }}
+            className="relative  "
+          >
+            {" "}
+            <div className="absolute top-0 w-full h-full flex items-center justify-center flex-col">
+              <svg width="100%" height="100%">
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop stopColor="#fcdf2a" offset="40%" />
+                  <stop stopColor="#edc62d" offset="100%" />
+                </linearGradient>
+                <FaAward
+                  size={50}
+                  style={{
+                    fill: "url(#gradient)",
+                  }}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div> */}
+    </div>
+  );
+};
+export default Section;
+
+export const useMounted = () => {
+  const [mounted, setMounted] = useState<boolean>(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  return mounted;
+};
+
+//innowacje
+// Dzięki dostępowi do najnowszych technologii, jesteśmy w stanie zapewnić najbardziej skuteczne rozwiązania w atrakcyjnej cenie.
+//najlepsze produkty
+// W ofercie znajduą sie tylko sprawdzone przez nas produkty
+
+//wysoka jakość usług
+// zatrudniamy najlepszych fachowców z długim doświadczeniem
+
+//wysoka jakość
+// Wieloletnie doświadczenie oraz wciąż rosnąca lista Klientów
+// function useIsInViewport(ref: any, ok?: any) {
+//   const [isIntersecting, setIsIntersecting] = useState(false);
+
+//   const observer = useMemo(
+//     () =>
+//       new IntersectionObserver(([entry]) => {
+//         setIsIntersecting(entry.isIntersecting);
+//         ok ? console.log(entry) : null;
+//       }),
+//     []
+//   );
+
+//   useEffect(() => {
+//     observer.observe(ref.current);
+
+//     return () => {
+//       observer.disconnect();
+//     };
+//   }, [ref, observer]);
+
+//   return isIntersecting;
+// }
