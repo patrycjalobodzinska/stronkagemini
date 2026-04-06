@@ -75,7 +75,7 @@ importers:
         specifier: ^4.1.0
         version: 4.2.1(leaflet@1.9.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-messenger-chat-plugin:
-        specifier: '*'
+        specifier: ^3.0.5
         version: 3.0.5
       react-query:
         specifier: ^3.39.2
@@ -3497,7 +3497,7 @@ snapshots:
       eslint: 8.23.0
       eslint-import-resolver-node: 0.3.10
       eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.32.0(eslint@8.23.0))(eslint@8.23.0)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.23.0)(typescript@4.8.2))(eslint-import-resolver-typescript@2.7.1)(eslint@8.23.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.23.0)(typescript@4.8.2))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.32.0(eslint@8.23.0))(eslint@8.23.0))(eslint@8.23.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.23.0)
       eslint-plugin-react: 7.37.5(eslint@8.23.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.23.0)
@@ -3519,7 +3519,7 @@ snapshots:
     dependencies:
       debug: 4.4.3
       eslint: 8.23.0
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.23.0)(typescript@4.8.2))(eslint-import-resolver-typescript@2.7.1)(eslint@8.23.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.23.0)(typescript@4.8.2))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.32.0(eslint@8.23.0))(eslint@8.23.0))(eslint@8.23.0)
       glob: 7.2.3
       is-glob: 4.0.3
       resolve: 1.22.11
@@ -3538,7 +3538,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.23.0)(typescript@4.8.2))(eslint-import-resolver-typescript@2.7.1)(eslint@8.23.0):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.23.0)(typescript@4.8.2))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.32.0(eslint@8.23.0))(eslint@8.23.0))(eslint@8.23.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
